@@ -1,0 +1,21 @@
+.conainer {
+  margin-top: 32px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn {
+  /* display: flex; */
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border: 1px solid rgb(88, 88, 137);
+
+  &:hover {
+    background-color: rgb(128, 128, 212);
+    color: aliceblue;
+    border: none;
+  }
+}
