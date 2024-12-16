@@ -5,6 +5,7 @@ import "./App.css";
 import Description from "./components/description//Description.jsx";
 import Options from "./components/options/Options.jsx";
 import Feedback from "./components/feedback/Feedback.jsx";
+import Notification from "./components/Notificaton/Notificaton.jsx";
 
 function App() {
   let reviews = {
@@ -58,13 +59,17 @@ function App() {
         totalFeedback={totalFeedback}
         reset={handlReset}
       />
-      <Feedback
-        goodCount={options.good}
-        neutralCount={options.neutral}
-        badCount={options.bad}
-        total={totalFeedback}
-        positivePercentage={handlProcentGood()}
-      />
+      {totalFeedback === 0 ? (
+        <Notification />
+      ) : (
+        <Feedback
+          goodCount={options.good}
+          neutralCount={options.neutral}
+          badCount={options.bad}
+          total={totalFeedback}
+          positivePercentage={handlProcentGood()}
+        />
+      )}
     </>
   );
 }
